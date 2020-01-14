@@ -51,6 +51,17 @@
 3. 调整字段的属性（因为反向工程导入的字段信息量太少，部分属性设置了默认值）
 4. 生成代码
 
+## 入门案例
+
+这是一个简单的
+<a href="https://github.com/cai3178940/youran/releases/tag/v.3.0.0" target="_blank">项目示例</a>，
+您只需要下载项目的元数据文件，然后按照下面的流程，简单地点几下，即可预览生成的代码
+
+1. 项目管理 -> 元数据导入
+2. 项目管理 -> 操作 -> 编辑 -> 选择代码模板
+3. 项目管理 -> 操作 -> 代码预览
+
+
 ## 术语解析
 
 1. 项目：项目就是一个独立的应用系统，可以基于一个项目生成一整套JavaWeb系统。
@@ -62,7 +73,7 @@
 
 ## 生成效果展示
 
-![image](http://q2heisygm.bkt.clouddn.com/FowCy3cYMStF8P61bwbOdRsJ2RlO)
+![image](https://github.com/cai3178940/image/raw/master/youran/%E7%94%9F%E6%88%90%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA.png)
 
 > <a href="https://github.com/cai3178940/youran" target="_blank">点击访问Github源码地址</a>
 > **如果好用的话，帮忙加一颗星，谢谢！**

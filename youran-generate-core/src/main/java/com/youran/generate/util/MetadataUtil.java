@@ -4,7 +4,7 @@ import com.google.common.base.Joiner;
 import com.youran.common.constant.ErrorCode;
 import com.youran.common.exception.BusinessException;
 import com.youran.generate.constant.JFieldType;
-import com.youran.generate.constant.JavaKeyword;
+import com.youran.generate.constant.WordBlacklist;
 import com.youran.generate.constant.MetaSpecialField;
 import com.youran.generate.pojo.po.MetaEntityPO;
 import com.youran.generate.pojo.po.MetaFieldPO;
@@ -38,20 +38,15 @@ public class MetadataUtil {
         } else {
             throw new IllegalStateException("特殊异常");
         }
-        if (StringUtils.isNotBlank(fkAlias)) {
-            if (forSql) {
-                return fkAlias;
-            } else {
-                return SwitchCaseUtil.underlineToCamelCase(fkAlias, false);
-            }
+        if (forSql) {
+            return fkAlias;
+        } else {
+            return SwitchCaseUtil.underlineToCamelCase(fkAlias, false);
         }
-        // 未指定外键字段名的情况下自动生成
-        return buildDefaultMtmFkAlias(refer.getClassName(), forSql);
     }
 
     /**
      * 构建默认多对多外键别名
-     * TODO 判断主键字段如果不是直接叫id，则使用主键字段名
      *
      * @param className
      * @param forSql
@@ -74,7 +69,7 @@ public class MetadataUtil {
      * @param value
      */
     public static void jfieldNameCheck(String value) {
-        if (JavaKeyword.isKeyword(value)) {
+        if (WordBlacklist.isJavaKeyword(value)) {
             throw new BusinessException(ErrorCode.BAD_REQUEST, "字段名“" + value + "”是java关键字");
         }
     }

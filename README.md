@@ -10,7 +10,7 @@
 支持将代码直接生成到远程git仓库，同时支持在元数据变动以后再次生成（只生成差异部分）。
 2. ★★★自定义模板：如果预置的代码模板不能满足您的需求，可基于您自己团队的技术框架开发属于您独有的代码模板。
 3. ★反向工程：如果您的应用已经完成了表结构设计，请使用`反向工程`功能将建表语句反向导入项目中，自动生成实体和字段。
-4. 多对多关系：支持在两个实体之间的建立多对多关联关系，会在mysql中生成一张关联表，可以设置两个实体之间是否持有对方引用，持有引用的一方会自动生成维护关联关系的功能。
+4. 多对多关系：支持在两个实体之间建立多对多关联关系，会在mysql中生成一张关联表，可以设置两个实体之间是否持有对方引用，持有引用的一方会自动生成维护关联关系的功能。
 5. 外键关联：在添加字段的时候，可以设置该字段是否外键，外键字段需要关联某个实体的主键，从而可以实现`一对一`或`一对多`关联。
 6. 级联扩展：外键字段或多对多实体上可以配置级联字段，级联字段可以作为被关联实体的查询条件，也能作为查询结果展示。
 7. 实体ER图：可以在实体列表页选择多个存在关联关系的实体，点击`查看ER图`按钮，即可生成实体关系图。
@@ -33,15 +33,25 @@
 
 **该功能支持您在“修改元数据”和“生成代码”两个操作中反复执行，建议您在整个软件迭代周期中都使用本平台来执行增量生成。**
 
-![项目管理](http://q2heisygm.bkt.clouddn.com/FsWO-VuiQr91l4xrUbRJjDWJrY3F)
+## 页面截图
 
-![字段管理](http://q2heisygm.bkt.clouddn.com/FrJENjqMQeNN9Ql4trb2g9706NKv)
+**项目管理**
+![项目管理](https://github.com/cai3178940/image/raw/master/youran/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86.png)
 
-![ER图](http://q2heisygm.bkt.clouddn.com/FriqAJIuv-Qp64PzYCkOk04xMn1A)
+**增量预览**
+![增量预览](https://github.com/cai3178940/image/raw/master/youran/%E5%A2%9E%E9%87%8F%E9%A2%84%E8%A7%88.png)
 
-![代码预览](http://q2heisygm.bkt.clouddn.com/FhRTy0boAkIR5qBmv026Y-yDn-Y8)
+**字段管理**
+![字段管理](https://github.com/cai3178940/image/raw/master/youran/%E5%AD%97%E6%AE%B5%E7%AE%A1%E7%90%86.png)
 
-![模板列表](http://q2heisygm.bkt.clouddn.com/FvyI9pnW1j8cyIXxND4ChwkDYRv4)
+**ER图**
+![ER图](https://github.com/cai3178940/image/raw/master/youran/ER%E5%9B%BE.png)
+
+**代码预览**
+![代码预览](https://github.com/cai3178940/image/raw/master/youran/%E4%BB%A3%E7%A0%81%E9%A2%84%E8%A7%88.png)
+
+**模板列表**
+![模板列表](https://github.com/cai3178940/image/raw/master/youran/%E6%A8%A1%E6%9D%BF%E5%88%97%E8%A1%A8.png)
 
 ## 安装部署
 
@@ -109,6 +119,17 @@ java -jar youran-generate-release/target/youran-generate-release-X.X.X-SNAPSHOT.
 3. 调整字段的属性（因为反向工程导入的字段信息量太少，部分属性设置了默认值）
 4. 生成代码
 
+## 入门案例
+
+这是一个简单的
+<a href="https://github.com/cai3178940/youran/releases/tag/v.3.0.0" target="_blank">项目示例</a>，
+您只需要下载项目的元数据文件，然后按照下面的流程，简单地点几下，即可预览生成的代码
+
+1. 项目管理 -> 元数据导入
+2. 项目管理 -> 操作 -> 编辑 -> 选择代码模板
+3. 项目管理 -> 操作 -> 代码预览
+
+
 ## 术语解析
 
 1. 项目：项目就是一个独立的应用系统，可以基于一个项目生成一整套JavaWeb系统。
@@ -118,9 +139,12 @@ java -jar youran-generate-release/target/youran-generate-release-X.X.X-SNAPSHOT.
 5. 索引：就是mysql业务表中的索引。
 6. 多对多关系、外键级联扩展、多对多级联扩展：您用了就知道。
 
+## 更新日志
+
+[ChangeLog](/doc/ChangeLog.md)
+
 ## 生成效果展示
 
-![image](http://q2heisygm.bkt.clouddn.com/FowCy3cYMStF8P61bwbOdRsJ2RlO)
+![image](https://github.com/cai3178940/image/raw/master/youran/%E7%94%9F%E6%88%90%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA.png)
 
 > <a href="https://github.com/cai3178940/youran" target="_blank">点击访问Github源码地址</a>
-> **如果好用的话，帮忙加一颗星，谢谢！**
